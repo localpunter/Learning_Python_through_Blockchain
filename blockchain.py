@@ -10,8 +10,16 @@ def get_last_blockchain_value():
     return blockchain[-1]
 
 
+# This function accepts two arguments.
+# One required one (transaction_amount) and one optional one (last_transaction)
+# The optional one is optional because it has a default value => [1]
 def add_transaction(transaction, last_transaction=[1]):
-    """ Appends a new value as well as the last value to the blockchain """
+    """ Appends a new value as well as the last value to the blockchain
+
+        Arguments:
+            :transaction_amount: The amount that should be added.
+            :last_transaction: The last blockchain transaction (default [1]).
+    """
     if last_transaction == None:
         last_transaction = [1]
     blockchain.append([last_transaction, transaction])
@@ -20,6 +28,7 @@ def add_transaction(transaction, last_transaction=[1]):
 def get_transaction_value():
     """ Returns the input of the user (a new transaction amount)
     as a float """
+    # Get the user input, transform it from a string to a float and store it in user_input
     user_input = float(input('Your transaction amount please: '))
     return user_input
 
@@ -40,7 +49,6 @@ def verify_chain():
     block_index = 0
     is_valid = True
     for block in blockchain:
-        print(block)
         if block_index == 0:
             block_index += 1
             continue
