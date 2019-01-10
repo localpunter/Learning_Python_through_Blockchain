@@ -29,5 +29,5 @@ concat_name_and_age(user_name, user_age)
 int_age = int(user_age)
 decades_lived = (int_age // 10)
 
-print(name_and_age)
-print(decades_lived)
+print("You are", user_name, "-", "Age:", user_age)
+print("You have lived for", decades_lived, "decades")
