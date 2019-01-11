@@ -15,10 +15,15 @@ In this course, you'll learn Python from scratch - and you'll do so whilst build
 What's in the course?
 
 A summary of Python and the Blockchain technology
+
 All the base Python syntax you need to know (variables, operators, functions, ...)
+
 Loops and conditional statements
+
 More complex data structures like tuples or dictionaries
+
 A closer look at built-in functions and the standard library Python ships with
+
 String manipulation
 How to work with files
 Error handling
