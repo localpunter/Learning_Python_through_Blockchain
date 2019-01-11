@@ -1,5 +1,9 @@
 # Learning_Python_through_Blockchain
 
+The content below is taken from the Udemy site where I purchased this course.
+It is not my course but the blockchain.py file is my work throughout the course.
+
+
 Want to learn Python "on the job" whilst building an exciting course project? This course is for you!
 
 Python is probably THE most trending programming language you can learn these days!
