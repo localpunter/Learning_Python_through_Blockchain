@@ -26,14 +26,36 @@ range ONLY WORKS with integers, + or - but NOT floats """
 # for i in range(0, 40, 5):
 #     print(i)
 
-simple_list = [1, 2, 3, 4]
+""" This is a list function where we have a list and
+we double each value and return a doubled list"""
+# simple_list = [1, 2, 3, 4]
 # doubled_list =[]
 # for element in simple_list:
 #     doubled_list.append(element * 2)
 # print(doubled_list)
 
-doubled_list = [el * 2 for el in simple_list]
-print(doubled_list)
+
+""" This is a list comprehension where we do the same as
+above but all in one line without the need for a for loop """
+# simple_list = [1, 2, 3, 4]
+# doubled_list = [el * 2 for el in simple_list]
+# print(doubled_list)
+
+
+""" This is a list comprehension where we do the same as above but
+include an if statement so only number divisible by 2 are returned """
+simple_list = [1,2,3,4]
+dup_list = [el * 2 for el in simple_list if el % 2 == 0]
+print(dup_list)
+
+
+""" We have a stats list with key value pairs (tuples) and we convert them into a Dict
+comprehension in dict_stats. This give us a dictionary"""
+# stats = [("age", 29), ("weight", 72), ("height", 178)]
+# print(stats)
+
+# dict_stats = {key: value for (key, value) in stats}
+# print(dict_stats)
 
 
 
