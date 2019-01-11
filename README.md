@@ -25,14 +25,23 @@ More complex data structures like tuples or dictionaries
 A closer look at built-in functions and the standard library Python ships with
 
 String manipulation
+
 How to work with files
+
 Error handling
+
 Debugging
+
 Object-oriented programming with classes and inheritance
+
 Internal & external modules (packages)
+
 How to spin up an Http server with the Flask package
+
 Handling Http requests (sending & receiving)
+
 And more!
+
 What are the course prerequisites?
 
 NO prior programming knowledge is required
