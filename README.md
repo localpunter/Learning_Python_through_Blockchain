@@ -1,6 +1,7 @@
 # Learning_Python_through_Blockchain
 
 - The content below is taken from the Udemy site where I purchased this course.
+
 It is not my course but the blockchain.py file is my work throughout the course.
 
 
