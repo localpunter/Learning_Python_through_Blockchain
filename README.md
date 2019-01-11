@@ -14,31 +14,31 @@ In this course, you'll learn Python from scratch - and you'll do so whilst build
 
 What's in the course?
 
-A summary of Python and the Blockchain technology
+- A summary of Python and the Blockchain technology
 
-All the base Python syntax you need to know (variables, operators, functions, ...)
+- All the base Python syntax you need to know (variables, operators, functions, ...)
 
-Loops and conditional statements
+- Loops and conditional statements
 
-More complex data structures like tuples or dictionaries
+- More complex data structures like tuples or dictionaries
 
-A closer look at built-in functions and the standard library Python ships with
+- A closer look at built-in functions and the standard library Python ships with
 
-String manipulation
+- String manipulation
 
-How to work with files
+- How to work with files
 
-Error handling
+- Error handling
 
-Debugging
+- Debugging
 
-Object-oriented programming with classes and inheritance
+- Object-oriented programming with classes and inheritance
 
-Internal & external modules (packages)
+- Internal & external modules (packages)
 
-How to spin up an Http server with the Flask package
+- How to spin up an Http server with the Flask package
 
-Handling Http requests (sending & receiving)
+- Handling Http requests (sending & receiving)
 
 And more!
 
