@@ -1,20 +1,3 @@
-# name = input('what is your name? ')
-
-# age = int(input('what is your age? '))
-
-# def print_user_data():
-#     print(name, age)
-
-# #def print_values(arg1, arg2):
-#     #print(arg1, arg2)
-
-# def print_decades_i_lived():
-#     return int(age / 10)
-
-# print_user_data()
-# #print_values(45, 'abc')
-# print(print_decades_i_lived())
-
 
 # name = "Alan"
 # age = 45
@@ -40,8 +23,17 @@ i.e. 5,6,7,8,9 in this case """
 """ with 3 arguments we print out from the first argument(0) up to the second argument(40)
 in increments of the third argument(5) i.e. 0,5,10,15,20,25,30,35 in this case
 range ONLY WORKS with integers, + or - but NOT floats """
-for i in range(0, 40, 5):
-    print(i)
+# for i in range(0, 40, 5):
+#     print(i)
+
+simple_list = [1, 2, 3, 4]
+# doubled_list =[]
+# for element in simple_list:
+#     doubled_list.append(element * 2)
+# print(doubled_list)
+
+doubled_list = [el * 2 for el in simple_list]
+print(doubled_list)
 
 
 

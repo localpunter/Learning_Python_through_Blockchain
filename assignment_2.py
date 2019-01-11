@@ -49,9 +49,12 @@ print("Remove all names from list with 'while' loop")
 print("--------------------------------------------")
 
 
-while len(names) > 1:
+while len(names) >= 1:
     names.pop()
     print(names)
+
+
+
 
 
 
