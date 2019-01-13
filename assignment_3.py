@@ -26,8 +26,8 @@ for el in persons:
 
 # 2) Use a list comprehension to convert this list of persons into a list of names (of the persons).
 
-# print("List Comprehension with just Values:", [el for el in persons])
-# print("List Comprehension with Keys & Values:", [(el) for (k, el) in persons])
+# print("List Comprehension with just Values:", [el for el in persons.values()])
+# print("List Comprehension with Keys & Values:", [(el) for (k, el) in persons.items()])
 
 names = [el ["name"] for el in persons]
 print("List Comprehension with just names:", names)
@@ -45,10 +45,11 @@ print("Are all ages over 20?", all_ages_over_20)
 copied_names = names[:]
 copied_names[0] = "Bawbag"
 print("Copied names with the first name changed:", copied_names)
-print("Original list of names unchanged", names)
+print("Original list of names unchanged:", names)
 
 
 # 5) Unpack the persons of the original list into different variables and output these variables.
 
-person_1, person_2, person_3 = names
-print("These are the original names unpacked as different vars", person_1, person_2, person_3)
+p_1, p_2, p_3 = persons
+print("These are the original people unpacked as different vars:", p_1, p_2, p_3)
+print("Person 2 only:", p_2)

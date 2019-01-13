@@ -30,16 +30,16 @@ range ONLY WORKS with integers, + or - but NOT floats """
 we double each value and return a doubled list
 We can also unpack a list by putting variables in front of the = sign. NB You need to have
 the same number of variables as are in the list"""
-simple_list = [1, 2, 3, 4]
-doubled_list =[]
-for element in simple_list:
-    doubled_list.append(element * 2)
-print(doubled_list)
+# simple_list = [1, 2, 3, 4]
+# doubled_list =[]
+# for element in simple_list:
+#     doubled_list.append(element * 2)
+# print(doubled_list)
 
-a, b, c, d = simple_list
-print(simple_list)
-print("This will print each element individually", a, b, c, d)
-print("This will print each element individually", a, d)
+# a, b, c, d = simple_list
+# print(simple_list)
+# print("This will print each element individually", a, b, c, d)
+# print("This will print each element individually", a, d)
 
 
 """ This is a list comprehension where we do the same as
