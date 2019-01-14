@@ -4,24 +4,29 @@
 their own dictionary and a list [] of hobbies. All persons
 are then wrapped in a list"""
 persons = [
-    {"name": "Alan",
-    "age": 45,
-    "hobbies": ["Electronics", "Arduino", "Programming"],
+    {
+        "name": "Alan",
+        "age": 45,
+        "hobbies": ["Electronics", "Arduino", "Programming"],
     },
-    {"name": "Rachel",
-    "age": 37,
-    "hobbies": ["Baking", "Walking", "Reading"],
+    {
+        "name": "Rachel",
+        "age": 37,
+        "hobbies": ["Baking", "Walking", "Reading"],
     },
-    {"name": "Morgan",
-    "age": 43,
-    "hobbies": ["Walking", "Tinkering", "Fishing"],
+    {
+        "name": "Morgan",
+        "age": 43,
+        "hobbies": ["Walking", "Tinkering", "Fishing"],
     }
 ]
 
+""" Prints all dictionaries on 1 line"""
 # print("This is my person dictionary:", persons)
 
+""" Prints each persons dictionary on a separate line"""
 for el in persons:
-    print("This is my persons dictionary:", el)
+    print("This is", el ["name"], "'s dictionary:", el)
 
 
 # 2) Use a list comprehension to convert this list of persons into a list of names (of the persons).
