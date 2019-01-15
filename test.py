@@ -180,7 +180,7 @@ To delete from a set use 'discard'"""
 
 
 """ ALL & ANY.  """
-# new_list = [True, True, False]
+new_list = [True, True, False]
 # print(new_list)
 # print("'Any' checks if any of the values are True in the list:", any(new_list))
 """ Any returns True (in this case) as it checks if the list holds at least 1 True value. """
@@ -194,3 +194,62 @@ list comprehension to work out what elements are greater than 0"""
 
 """ If we want to know if all elements are greater than 0 we use list comprehension with All"""
 # print("This tells us if all elements are greater than 0, True or False:", all([el > 0 for el in number_list]))
+
+
+""" FORMAT METHODS"""
+# name = "Alan"
+# age = 45
+# print("I am " + name + " and I am " + str(age) + " years old.")
+
+""" So rather than opening and closing brackets all the time we can use {} as placeholders in the one
+string and add .format() after the string which will inject the values into the string. The order is
+very important and obviously the number of placeholders needs to equal the number of arguments. This
+can be changed by inputting numbers between the {}. e.g. {1} {0} would swap the name and age.
+The 4th print is a new way of doing this but only on Python 3.6 or above. Print(f"")"""
+# print("I am {} and I am {} years old.".format(name, age))
+# print("I am {1} and I am {0} years old.".format(name, age))
+# print("I am {0} and I am {1} years old. Yes I am really called {0}".format(name, age))
+# print(f"I am {name} and I am {age:.2f} years old!")
+
+""" {:.1f} tells the program that we want to return the value as a float with 1 decimal place."""
+# funds = 150.9723
+# print("Funds: {}".format(funds))
+# print("Funds: {:.1f}".format(funds))
+
+
+
+""" MAP FUNCTION
+Without the list function we just get a <map object at ....> back so we use the list function in
+front of the map function"""
+simple_list = [1,2,3,4]
+
+def multiply(el):
+    return el * 2
+
+
+# print("Returns a map object:", map(multiply, simple_list))
+print("This runs our multiply function on our simple_list and returns the output:", list(map(multiply, simple_list)))
+# print("This converts our simple_list into strings:", list(map(str, simple_list)))
+
+""" LAMBDA FUNCTION """
+# print("This uses a Lambda function which removes the need for the multiply function:", list(map(lambda el: el * 2, simple_list)))
+
+
+
+""" UNPACKING FUNCTION ARGUMENTS with * """
+def unlimited_arguments(*args):
+    print("With (*args) we get a tuple which we can use inside the function:", args)
+    for argument in args:
+        print(argument)
+
+unlimited_arguments(1,2,3,4)
+
+a= [1,2,3,4,5]
+print("Some text: {} {} {}".format(*a))
+
+def dict_arguments(*args, **keyword_args):
+    print(keyword_args)
+    for k, argument in keyword_args.items():
+        print(k, argument)
+
+dict_arguments(name="Alan", age=45, hobbies=["electronics", "programming", "arduino"])
