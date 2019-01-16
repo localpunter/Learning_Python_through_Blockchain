@@ -221,14 +221,14 @@ The 4th print is a new way of doing this but only on Python 3.6 or above. Print(
 """ MAP FUNCTION
 Without the list function we just get a <map object at ....> back so we use the list function in
 front of the map function"""
-simple_list = [1,2,3,4]
+# simple_list = [1,2,3,4]
 
-def multiply(el):
-    return el * 2
+# def multiply(el):
+#     return el * 2
 
 
 # print("Returns a map object:", map(multiply, simple_list))
-print("This runs our multiply function on our simple_list and returns the output:", list(map(multiply, simple_list)))
+# print("This runs our multiply function on our simple_list and returns the output:", list(map(multiply, simple_list)))
 # print("This converts our simple_list into strings:", list(map(str, simple_list)))
 
 """ LAMBDA FUNCTION """
@@ -237,19 +237,28 @@ print("This runs our multiply function on our simple_list and returns the output
 
 
 """ UNPACKING FUNCTION ARGUMENTS with * """
-def unlimited_arguments(*args):
-    print("With (*args) we get a tuple which we can use inside the function:", args)
-    for argument in args:
-        print(argument)
+# def unlimited_arguments(*args):
+#     print("With (*args) we get a tuple which we can use inside the function:", args)
+#     for argument in args:
+#         print(argument)
 
-unlimited_arguments(1,2,3,4)
+# unlimited_arguments(1,2,3,4)
 
-a= [1,2,3,4,5]
-print("Some text: {} {} {}".format(*a))
+# a= [1,2,3,4,5]
+# print("Some text: {} {} {}".format(*a))
 
-def dict_arguments(*args, **keyword_args):
-    print(keyword_args)
-    for k, argument in keyword_args.items():
-        print(k, argument)
+# def dict_arguments(*args, **keyword_args):
+#     print(keyword_args)
+#     for k, argument in keyword_args.items():
+#         print(k, argument)
 
-dict_arguments(name="Alan", age=45, hobbies=["electronics", "programming", "arduino"])
+# dict_arguments(name="Alan", age=45, hobbies=["electronics", "programming", "arduino"])
+
+
+
+# hash_a = "fdcd010164e24fe2247e9c6b20e211ab96c0cb7b3ad2da9f3e5feaac47ecc4d1"
+# hash_b = "fdcd010164e24fe2247e9c6b20e211ab96c0cb7b3ad2da9f3e5feaac47ecc4d1"
+# if hash_a == hash_b:
+#     print("We are the same hash")
+# else:
+#     print("Boo!")
