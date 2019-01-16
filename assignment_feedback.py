@@ -1,39 +1,39 @@
-persons = {
-
-    'name': ['Jonh', 'Julia', 'David', 'Ana', 'Carl'],
-
-    'age': [31, 19, 21, 17, 27],
-
-    'hobby': ['cooking', 'biking', 'Parkour', 'Creative writing', 'Singing']
-
-}
-
-names = [name for name in persons['name']]
-
-print(names)
-
-# ['Jonh', 'Julia', 'David', 'Ana', 'Carl']
+# 1) Import the random function and generate both a random number between 0 and 1 as well as a random number between 1 and 10.
+import random
+import datetime
+import time
 
 
-
-older_than_twenty = ['%s: %s' % (name, age) for name, age in zip(persons['name'], persons['age']) if age > 20]
-
-print(older_than_twenty)
-
-# ['Jonh: 31', 'David: 21', 'Carl: 27']
+iterations = list(range(1,6))
 
 
-
-names = persons['name'][:]
-
-names[0] = 'Alex'
-
-print(persons['name'])
-
-print(names)
+def random_0_to_1():
+    return random.random()
 
 
+def random_1_to_10():
+    return random.uniform(1, 10)
 
-# ['Jonh', 'Julia', 'David', 'Ana', 'Carl']
+print('\n#1.- RANDOM FUNCTIONS')
 
-# ['Alex', 'Julia', 'David', 'Ana', 'Carl']
+print('\n    Random numbers between 0.0 and 1.0:')
+for i in iterations:
+    print(8 * ' ' + 'iteration {:2}:     {:<25}'.format(i, random_0_to_1()))
+
+print('\n    Random numbers between 1.0 and 10.0:')
+for i in iterations:
+    print(8 * ' ' + 'iteration {:2}:     {:<25}'.format(i, random_1_to_10()))
+
+print('\n')
+
+# 2) Use the datetime library together with the random number to generate a random, unique value.
+print('\n#2.- RANDOM with DATETIME FUNCTIONS')
+
+for i in iterations:
+    i_seed = datetime.datetime.now().microsecond
+    random.seed(i_seed)
+    i_random = random_0_to_1()
+    print(8 * ' ' + 'iteration {:2} (seed={:6}):     {:<25}'.format(i, i_seed, i_random))
+    time.sleep(i_random)
+
+print('\n')
