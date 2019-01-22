@@ -38,6 +38,10 @@
 #         expecting_input = False
 
 # 3) Store user input in a list (instead of directly adding it to the file) and write that list to the file – both with pickle and json.
+
+# 4) Adjust the logic to load the file content to work with pickled/ json data.
+
+
 import pickle
 import json
 
@@ -46,13 +50,13 @@ user_input_list = []
 
 
 while expecting_input:
-    print("Please choose: ")
+    print("\nPlease choose from the list below: \n")
     print("1: Add your input")
     print("2: Output data")
     print("q: Quit")
-    user_input = input("Your choice: ")
+    user_input = input("\nYour choice: ")
     if user_input == "1":
-        store_data = input("Your inputted data is: ")
+        store_data = input("Please input some data: ")
         user_input_list.append(store_data)
         with open("assignment_6.p", mode="wb") as f:
             f.write(pickle.dumps(user_input_list))
@@ -64,8 +68,12 @@ while expecting_input:
         # with open("assignment_6.txt", mode="r") as f:
         #     file_content = json.loads(f.read())
             for line in file_content:
-                print(line)
+                print("\n",line)
     elif user_input == "q":
         expecting_input = False
+    else:
+        print("The value",user_input,"invalid! Please pick a value from the list.")
+else:
+    print("You have successfully quit!")
 
-# 4) Adjust the logic to load the file content to work with pickled/ json data.
+
