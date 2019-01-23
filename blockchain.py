@@ -28,35 +28,42 @@ participants = {"Alan"}
 
 
 def load_data():
-    """Initialize blockchain + open transactions data from a file."""
-    global blockchain
-    global open_transactions
-    with open("blockchain.txt", mode="r") as f:
-        # file_content = pickle.loads(f.read())
-        file_content = f.readlines()
-        # blockchain = file_content["chain"]
-        # open_transactions = file_content["ot"]
-        blockchain = json.loads(file_content[0][:-1])
-        # We need to convert the loaded data because Transactions should use OrderedDict
-        updated_blockchain = []
-        for block in blockchain:
-            updated_block = {
-                "previous_hash": block["previous_hash"],
-                "index": block["index"],
-                "proof": block["proof"],
-                "transactions": [OrderedDict(
-        [("sender", tx["sender"]), ("recipient", tx["recipient"]), ("amount", tx["amount"])]) for tx in block["transactions"]]
-            }
-            updated_blockchain.append(updated_block)
-        blockchain = updated_blockchain
-        open_transactions = json.loads(file_content[1])
-        # We need to convert the loaded data because Transactions should use OrderedDict
-        updated_transactions = []
-        for tx in open_transactions:
-            updated_tranaction = OrderedDict(
-                [("sender", tx["sender"]), ("recipient", tx["recipient"]), ("amount", tx["amount"])])
-            updated_transactions.append(updated_tranaction)
-        open_transactions = updated_transactions
+    """Initialize blockchain & open transactions data from a file."""
+    try:
+
+        with open("blockchain.txt", mode="r") as f:
+            # file_content = pickle.loads(f.read())
+            file_content = f.readlines()
+
+            global blockchain
+            global open_transactions
+            # blockchain = file_content["chain"]
+            # open_transactions = file_content["ot"]
+            blockchain = json.loads(file_content[0][:-1])
+            # We need to convert the loaded data because Transactions should use OrderedDict
+            updated_blockchain = []
+            for block in blockchain:
+                updated_block = {
+                    "previous_hash": block["previous_hash"],
+                    "index": block["index"],
+                    "proof": block["proof"],
+                    "transactions": [OrderedDict(
+            [("sender", tx["sender"]), ("recipient", tx["recipient"]), ("amount", tx["amount"])]) for tx in block["transactions"]]
+                }
+                updated_blockchain.append(updated_block)
+            blockchain = updated_blockchain
+            open_transactions = json.loads(file_content[1])
+            # We need to convert the loaded data because Transactions should use OrderedDict
+            updated_transactions = []
+            for tx in open_transactions:
+                updated_tranaction = OrderedDict(
+                    [("sender", tx["sender"]), ("recipient", tx["recipient"]), ("amount", tx["amount"])])
+                updated_transactions.append(updated_tranaction)
+            open_transactions = updated_transactions
+    except IOError:
+        print("\nSorry! File not found!")
+    finally:
+        print("CleanUp!")
 
 
 
@@ -219,7 +226,7 @@ def get_transaction_value():
 
 def get_user_choice():
     """Prompts the user for its choice and return it."""
-    user_input = input("Your choice: ")
+    user_input = input("\nYour choice: ")
     return user_input
 
 
@@ -256,7 +263,7 @@ waiting_for_input = True
 # A while loop for the user input interface
 # It's a loop that exits once waiting_for_input becomes False or when break is called
 while waiting_for_input:
-    print("Please choose: ")
+    print("\nPlease choosefrom the list below: \n")
     print("1: Add a new transaction value")
     print("2: Mine a new block")
     print("3: Output the blockchain blocks")
