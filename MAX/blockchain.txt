@@ -1,0 +1,2 @@
+[{"index": 0, "previous_hash": "", "timestamp": 0, "transactions": [], "proof": 100}, {"index": 1, "previous_hash": "c775ae7455f086e2fc68520d31bfebfdb18ffeaceb933085c510d5f8d2177813", "timestamp": 1548529080.0773299, "transactions": [{"sender": "MINING", "recipient": "MAX", "amount": 10}], "proof": 92}]
+[]
