@@ -1,39 +1,69 @@
-# 1) Import the random function and generate both a random number between 0 and 1 as well as a random number between 1 and 10.
-import random
-import datetime
-import time
+# 1) Create a Food class with a “name” and a “kind” attribute as well as a “describe()” method
+# (which prints “name” and “kind” in a sentence).
 
 
-iterations = list(range(1,6))
+class Food:
+    def __init__(self, name, kind):
+        self.name = name
+        self.kind = kind
+
+    def describe(self):
+        print('My name is {} and I belong to the kind of {}'.format(
+            self.name, self.kind))
+
+    def __repr__(self):
+        return 'Name: {}, Kind: {}'.format(self.name, self.kind)
 
 
-def random_0_to_1():
-    return random.random()
+# banana = Food('Banana', 'Fruits')
+# banana.describe()
 
 
-def random_1_to_10():
-    return random.uniform(1, 10)
+# 2) Try turning describe() from an instance method into a class and a static method. Change it back to an instance method thereafter.
 
-print('\n#1.- RANDOM FUNCTIONS')
+# class Food:
+#       def __init__(self, name, kind):
+#         self.name = name
+#         self.kind = kind
 
-print('\n    Random numbers between 0.0 and 1.0:')
-for i in iterations:
-    print(8 * ' ' + 'iteration {:2}:     {:<25}'.format(i, random_0_to_1()))
+#     @staticmethod
+#     def describe(name, kind):
+#         print('My name is {} and I belong to the kind of {}'.format(
+#             name, kind))
 
-print('\n    Random numbers between 1.0 and 10.0:')
-for i in iterations:
-    print(8 * ' ' + 'iteration {:2}:     {:<25}'.format(i, random_1_to_10()))
+# Food.describe('Banana', 'Fruit')
 
-print('\n')
+# 3) Create a  “Meat” and a “Fruit” class – both should inherit from “Food”.
+# Add a “cook()” method to “Meat” and “clean()” to “Fruit”.
 
-# 2) Use the datetime library together with the random number to generate a random, unique value.
-print('\n#2.- RANDOM with DATETIME FUNCTIONS')
+class Meat(Food):
 
-for i in iterations:
-    i_seed = datetime.datetime.now().microsecond
-    random.seed(i_seed)
-    i_random = random_0_to_1()
-    print(8 * ' ' + 'iteration {:2} (seed={:6}):     {:<25}'.format(i, i_seed, i_random))
-    time.sleep(i_random)
+    def __init__(self, name):
+        super().__init__(name, 'meat')
 
-print('\n')
+    def cook(self):
+        print('I am cooking')
+
+
+class Fruit(Food):
+
+    def __init__(self, name):
+        super().__init__(name, 'fruit')
+
+    def cleaning(self):
+        print('I am cleaning')
+
+
+banana = Fruit('banana')
+banana.describe()
+banana.cleaning()
+
+
+pork = Meat('pork')
+pork.describe()
+pork.cook()
+
+
+# 4) Overwrite a “dunder” method to be able to print your “Food” class.
+print(banana)
+print(pork)
