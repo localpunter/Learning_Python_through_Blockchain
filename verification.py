@@ -1,7 +1,9 @@
 from hash_util import hash_string_256, hash_block
 
 class Verification:
-    def valid_proof(self, transactions, last_hash, proof):
+    @staticmethod
+    # Only works with the inputs its getting and doesn't access anything from the class
+    def valid_proof(transactions, last_hash, proof):
         """Validate a proof of work number and see if it solves the puzzle algorithm (two leading 0s)
 
         Arguments:
@@ -18,19 +20,23 @@ class Verification:
         # This condition is of course defined by you. You could also require 10 leading 0s - this would take significantly longer (and this allows you to control the speed at which new blocks can be added)
         return guess_hash[0:2] == '00'
 
-    def verify_chain(self, blockchain):
+    @classmethod
+    # Accesses valid_proof so needs access to the class. Also self can change to cls
+    def verify_chain(cls, blockchain):
         """ Verify the current blockchain and return True if valid, False if not"""
         for (index, block) in enumerate(blockchain):
             if index == 0:
                 continue
             if block.previous_hash != hash_block(blockchain[index - 1]):
                 return False
-            if not self.valid_proof(block.transactions[:-1], block.previous_hash, block.proof):
+            if not cls.valid_proof(block.transactions[:-1], block.previous_hash, block.proof):
                 print("Proof of work invalid")
                 return False
         return True
 
-    def verify_transaction(self, transaction, get_balance):
+    @staticmethod
+    # Only works with the inputs its getting and doesn't access anything from the class
+    def verify_transaction(transaction, get_balance):
         """Verify a transaction by checking whether the sender has sufficient coins.
 
         Arguments:
@@ -39,6 +45,8 @@ class Verification:
         sender_balance = get_balance()
         return sender_balance >= transaction.amount
 
-    def verify_transactions(self, open_transactions, get_balance):
+    @classmethod
+    # Accesses verify_transaction so needs access to the class. Also self can change to cls
+    def verify_transactions(cls, open_transactions, get_balance):
         """ Checks if all transactions are valid"""
-        return all([self.verify_transaction(tx, get_balance) for tx in open_transactions])
+        return all([cls.verify_transaction(tx, get_balance) for tx in open_transactions])
