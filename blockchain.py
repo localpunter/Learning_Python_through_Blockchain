@@ -13,6 +13,8 @@ from utility.verification import Verification
 # The reward we give to miners (for creating a new block)
 MINING_REWARD = 10
 
+print("Printing from blockchain.py file:", __name__)
+
 class Blockchain:
     def __init__(self, hosting_node_id):
         # Our starting block for the blockchain
