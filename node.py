@@ -1,14 +1,8 @@
 from uuid import uuid4
 from blockchain import Blockchain
-from utility.verification import Verification
+from verification import Verification
 
 class Node:
-    """The node which runs the local blockchain instance.
-
-    Attributes:
-        :id: The id of the node.
-        :blockchain: The blockchain which is run by this node.
-    """
     def __init__(self):
         # self.id = str(uuid4())
         self.id = "Alan"
@@ -39,7 +33,6 @@ class Node:
             print("-" * 50)
 
     def listen_for_input(self):
-        """Starts the node and waits for user input."""
         waiting_for_input = True
 
         # A while loop for the user input interface
@@ -87,8 +80,5 @@ class Node:
 
         print("Done!")
 
-if __name__ == "__main__":
-    node = Node()
-    node.listen_for_input()
-
-print("Printing from the node file: ", __name__)
+node = Node()
+node.listen_for_input()

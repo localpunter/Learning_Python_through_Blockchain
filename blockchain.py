@@ -5,26 +5,16 @@ import json
 import pickle
 
 # Import two functions from our hash_util.py file. Omit the ".py" in the import
-from utility.hash_util import hash_block
-from utility.verification import Verification
+from hash_util import hash_block
 from block import Block
 from transaction import Transaction
+from verification import Verification
 
 # The reward we give to miners (for creating a new block)
 MINING_REWARD = 10
 
-print("Printing from the blockchain file: ", __name__)
-
 class Blockchain:
-    """The Blockchain class manages the chain of blocks as well as open transactions and the node on which it's running.
-
-    Attributes:
-        :chain: The list of blocks
-        :open_transactions (private): The list of open transactions
-        :hosting_node: The connected node (which runs the blockchain).
-    """
     def __init__(self, hosting_node_id):
-        """The constructor of the Blockchain class."""
         # Our starting block for the blockchain
         genesis_block = Block(0, "", [], 100, 0)
         # Initializing our (empty) blockchain list
@@ -45,7 +35,6 @@ class Blockchain:
 
 
     def get_open_transactions(self):
-        """Returns a copy of the open transactions list."""
         return self.__open_transactions[:]
 
 
@@ -114,7 +103,7 @@ class Blockchain:
         """Calculate and return the balance for a participant.
 
         Arguments:
-            participant: The person for whom to calculate the balance.
+            :participant: The person for whom to calculate the balance.
         """
         participant = self.hosting_node
         # Fetch a list of all sent coin amounts for the given person (empty lists are returned if the person was NOT the sender)

@@ -1,9 +1,6 @@
-"""Provides verification helper methods"""
-
-from utility.hash_util import hash_string_256, hash_block
+from hash_util import hash_string_256, hash_block
 
 class Verification:
-    """A helper class which offer various static and class-based verification and validation methods."""
     @staticmethod
     # Only works with the inputs its getting and doesn't access anything from the class
     def valid_proof(transactions, last_hash, proof):
