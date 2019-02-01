@@ -17,4 +17,5 @@ class Transaction(Printable):
         self.amount = amount
 
     def to_ordered_dict(self):
+        """Converts this transaction into a (hashable) OrderedDict."""
         return OrderedDict([("sender", self.sender), ("recipient", self.recipient), ("amount", self.amount)])

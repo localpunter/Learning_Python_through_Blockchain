@@ -14,11 +14,11 @@ from wallet import Wallet
 # The reward we give to miners (for creating a new block)
 MINING_REWARD = 10
 
-print(__name__)
+print("Printing from blockchain.py file:", __name__)
 
 class Blockchain:
     """The Blockchain class manages the chain of blocks as well as open transactions and the node on which it's running.
-    
+
     Attributes:
         :chain: The list of blocks
         :open_transactions (private): The list of open transactions
@@ -41,7 +41,7 @@ class Blockchain:
         return self.__chain[:]
 
     # The setter for the chain property
-    @chain.setter 
+    @chain.setter
     def chain(self, val):
         self.__chain = val
 

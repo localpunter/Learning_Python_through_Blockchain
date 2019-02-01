@@ -4,6 +4,12 @@ from utility.verification import Verification
 from wallet import Wallet
 
 class Node:
+    """The node which runs the local blockchain instance.
+
+    Attributes:
+        :id: The id of the node.
+        :blockchain: The blockchain which is run by this node.
+    """
     def __init__(self):
         # self.id = str(uuid4())
         self.wallet = Wallet()
@@ -11,13 +17,11 @@ class Node:
         self.blockchain = Blockchain(self.wallet.public_key)
 
     def get_transaction_value(self):
-        """ Returns the input of the user (a new transaction amount)
-        as a float """
+        """ Returns the input of the user (a new transaction amount) as a float"""
         # Get the user input, transform it from a string to a float and store it in user_input
         tx_recipient = input("Enter the recipient of the transaction: ")
         tx_amount = float(input("Your transaction amount please: "))
         return (tx_recipient, tx_amount)
-
 
     def get_user_choice(self):
         """Prompts the user for its choice and return it."""
@@ -35,6 +39,7 @@ class Node:
             print("-" * 50)
 
     def listen_for_input(self):
+        """Starts the node and waits for user input."""
         waiting_for_input = True
 
         # A while loop for the user input interface
