@@ -142,7 +142,8 @@ class Blockchain:
     # One required one (recipient) and two optionals (sender=owner and amount=1.0)
     # The optional ones are optional because they have a default value
     #The required argument(s) MUST come before the optional ones
-    def add_transaction(self, recipient, sender, amount=1.0):
+
+    def add_transaction(self, recipient, sender, signature, amount=1.0):
         """ Appends a new value as well as the last value to the blockchain
 
         Arguments:
