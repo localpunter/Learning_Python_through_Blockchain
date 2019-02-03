@@ -14,11 +14,11 @@ from wallet import Wallet
 # The reward we give to miners (for creating a new block)
 MINING_REWARD = 10
 
-print("Printing from blockchain.py file:", __name__)
+print(__name__)
 
 class Blockchain:
     """The Blockchain class manages the chain of blocks as well as open transactions and the node on which it's running.
-
+    
     Attributes:
         :chain: The list of blocks
         :open_transactions (private): The list of open transactions
@@ -32,9 +32,9 @@ class Blockchain:
         self.chain = [genesis_block]
         # Unhandled transactions
         self.__open_transactions = []
-        self.load_data()
         self.hosting_node = hosting_node_id
         self.__peer_nodes = set()
+        self.load_data()
 
     # This turns the chain attribute into a property with a getter (the method below) and a setter (@chain.setter)
     @property
@@ -42,7 +42,7 @@ class Blockchain:
         return self.__chain[:]
 
     # The setter for the chain property
-    @chain.setter
+    @chain.setter 
     def chain(self, val):
         self.__chain = val
 
@@ -94,7 +94,7 @@ class Blockchain:
                 f.write('\n')
                 saveable_tx = [tx.__dict__ for tx in self.__open_transactions]
                 f.write(json.dumps(saveable_tx))
-                f.write("\n")
+                f.write('\n')
                 f.write(json.dumps(list(self.__peer_nodes)))
                 # save_data = {
                 #     'chain': blockchain,
@@ -203,7 +203,6 @@ class Blockchain:
         self.save_data()
         return block
 
-
     def add_peer_node(self, node):
         """Adds a new node to the peer node set.
 
@@ -221,3 +220,7 @@ class Blockchain:
         """
         self.__peer_nodes.discard(node)
         self.save_data()
+
+    def get_peer_nodes(self):
+        """Return a list of all connected peer nodes."""
+        return list(self.__peer_nodes)
