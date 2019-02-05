@@ -30,7 +30,7 @@ class Verification:
         # Only a hash (which is based on the above inputs) which starts with
         # two 0s is treated as valid
         # This condition is of course defined by you. You could also require
-        # 10 leading 0s - this would take significantly longer(and this
+        # 10 leading 0s - this would take significantly longer (and this
         # allows you to control the speed at which new blocks can be added)
         return guess_hash[0:2] == '00'
 
@@ -44,7 +44,8 @@ class Verification:
             if block.previous_hash != hash_block(blockchain[index - 1]):
                 return False
             if not cls.valid_proof(block.transactions[:-1],
-                                   block.previous_hash, block.proof):
+                                   block.previous_hash,
+                                   block.proof):
                 print('Proof of work is invalid')
                 return False
         return True
