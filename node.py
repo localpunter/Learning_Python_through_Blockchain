@@ -100,6 +100,32 @@ def broadcast_transaction():
         return jsonify(response), 500
 
 
+@app.route("/broadcast-block", methods=["POST"])
+def broadcast_block():
+    values = request.get_json()
+    if not values:
+        response = {"message": "No data found!"}
+        return jsonify(response), 400
+    if "block" not in values:
+        response = {"message": "Some data is missing!"}
+        return jsonify(response), 400
+    block = values["block"]
+    if block["index"] == blockchain.chain[-1].index + 1:
+        if blockchain.add_block(block):
+            response = {"message": "Block added!"}
+            return jsonify(response), 201
+        else:
+            response = {"message": "Block is invalid!"}
+            return jsonify(response), 409
+    elif block["index"] > blockchain.chain[-1].index:
+        response = {"message": "This blockchain is different to the local blockchain!"}
+        blockchain.resolve_conflicts = True
+        return jsonify(response), 200
+    else:
+        response = {"message": "Blockchain is shorter than expected! Block not added!"}
+        return jsonify(response), 409
+
+
 
 @app.route("/transaction", methods=["POST"])
 def add_transaction():
@@ -147,6 +173,9 @@ def add_transaction():
 
 @app.route("/mine", methods=["POST"])
 def mine():
+    if blockchain.resolve_conflicts:
+        response = {"message":"Resolve conflicts first! Block not added!"}
+        return jsonify(response), 409
     block = blockchain.mine_block()
     if block != None:
         dict_block = block.__dict__.copy()
