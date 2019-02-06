@@ -231,7 +231,7 @@ class Blockchain:
                         if (response.status_code == 400 or
                                 response.status_code == 500):
                             print("Transaction declined. Needs resolving!")
-                        return False
+                            return False
                     except requests.exceptions.ConnectionError:
                         continue
             return True
