@@ -1,10 +1,17 @@
 # Learning_Python_through_Blockchain
 
-- The content below is taken from the Udemy site where I purchased this course.
-It is not my course but the blockchain.py file is my work throughout the course.
+- The Documents folder has the course notes from Udemy where I purchased this course.
+
+It is not my course but the Blockchain folder contains my work throughout the course.
+
+You can run multiple nodes through the same PC:
+    'python node.py' - This will run the first node and defaults to localhost:5000 in the browser.
+    'python node.py -p 5001' - This will run the second node on localhost:5001 in the browser.
+
+'-p 50xx' overrides the default 5000 and allows you to set up as many nodes as you want to simulate a blockchain.
 
 
-Want to learn Python "on the job" whilst building an exciting course project? This course is for you!
+Course Content:
 
 Python is probably THE most trending programming language you can learn these days!
 

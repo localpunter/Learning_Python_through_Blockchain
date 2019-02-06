@@ -15,21 +15,22 @@ i.e. 0,1,2,3,4 in this case """
 # for i in range(5):
 #     print(i)
 
-""" with 2 arguments we print out from the first argument(5) up to the second argument(10)
-i.e. 5,6,7,8,9 in this case """
+""" with 2 arguments we print out from the first argument(5)
+up to the second argument(10)i.e. 5,6,7,8,9 in this case """
 # for i in range(5, 10):
 #     print(i)
 
-""" with 3 arguments we print out from the first argument(0) up to the second argument(40)
-in increments of the third argument(5) i.e. 0,5,10,15,20,25,30,35 in this case
-range ONLY WORKS with integers, + or - but NOT floats """
+""" with 3 arguments we print out from the first argument(0)
+up to the second argument(40) in increments of the third argument(5)
+i.e. 0,5,10,15,20,25,30,35 in this case range ONLY WORKS with integers,
++ or - but NOT floats """
 # for i in range(0, 40, 5):
 #     print(i)
 
 """ LISTS - This is a list function where we have a list and
 we double each value and return a doubled list
-We can also unpack a list by putting variables in front of the = sign. NB You need to have
-the same number of variables as are in the list"""
+We can also unpack a list by putting variables in front of the = sign.
+NB You need to have the same number of variables as are in the list"""
 # simple_list = [1, 2, 3, 4]
 # doubled_list =[]
 # for element in simple_list:
