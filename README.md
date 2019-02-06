@@ -5,7 +5,9 @@
 It is not my course but the Blockchain folder contains my work throughout the course.
 
 You can run multiple nodes through the same PC:
+
     'python node.py' - This will run the first node and defaults to localhost:5000 in the browser.
+    
     'python node.py -p 5001' - This will run the second node on localhost:5001 in the browser.
 
 '-p 50xx' overrides the default 5000 and allows you to set up as many nodes as you want to simulate a blockchain.
